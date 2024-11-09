@@ -1,0 +1,198 @@
+html {
+    touch-action: manipulation;
+}
+
+body{
+    margin-right: 0%;
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.wrapper-container {
+    display: inline-block;
+}
+
+.tetris-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+}
+
+.tetris-panel-container {
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction: column;
+    color: white;
+    background-color: #333333;
+}
+
+.tetris-panel-container-padding {
+    flex-grow: 1;
+}
+
+.tetris-panel-container p {
+   margin: 0;
+   padding: 0;
+}
+
+.tetris-button-panel {
+    border-style: none;
+    width: 100%;
+}
+
+.tetris-button {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    text-align: center;
+    background: #444444;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 40px;
+    margin-left: 250%;
+    background: linear-gradient(to bottom, #000, #555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+.box1 {
+    width: 100px;
+    height: 43px;
+    background: linear-gradient(to bottom, #000, #555);
+    position: absolute;
+    top: 65%;
+    right: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+.box2 {
+    width: 100px;
+    height: 43px;
+    background: linear-gradient(to bottom, #000, #555);
+    position: absolute;
+    top: 72%;
+    right: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+.box3 {
+    width: 100px;
+    height: 43px;
+    background: linear-gradient(to bottom, #000, #555);
+    position: absolute;
+    top: 79%;
+    right: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+.box4 {
+  width: 100px;
+  height: 43px;
+  background: linear-gradient(to bottom, #000, #555);
+  position: absolute;
+  top: 65%;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform .1s;
+}
+
+.box5 {
+  width: 100px;
+  height: 43px;
+  background: linear-gradient(to bottom, #000, #555);
+  position: absolute;
+  top: 72%;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform .1s;
+}
+
+.box6 {
+  width: 100px;
+  height: 43px;
+  background: linear-gradient(to bottom, #000, #555);
+  position: absolute;
+  top: 79%;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform .1s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.img-concert{
+    margin-left: 100%;
+    width: 200px;
+}
