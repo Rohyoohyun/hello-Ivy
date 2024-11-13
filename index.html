@@ -3,26 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helløvy:home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hello: Ivy</title>
+    <style>
+        body {
+            background-color: #2E2E2E;
+            font-family: Pretendard Variable;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            padding: 20px 40px;
+            font-size: 18px;
+            border-bottom: 1px solid #555;
+        }
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #FFF06B;
+            text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
+        }
+
+        .content {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 150px;
+            color: #FFF06B;
+            text-shadow: 0 0 10px #ffde4d, 0 0 20px #ffde4d;
+            margin: 0;
+            font-weight: thin;
+            position: fixed;
+            top: 10%;
+            left: 5%;
+        }
+
+        .content h1 span {
+            font-size: 200px;
+            font-weight: bold;
+        }
+
+        /* 움직이는 그라데이션 라인 */
+        .animated-line {
+            width: 70%; 
+            height: 2px; 
+            background: linear-gradient(90deg, #2E2E2E, #555, #ccc); /* 그라데이션 색상 */
+            position: fixed;
+            top: 80%;
+            left: 30%;
+            animation: moveGradient 2s linear infinite; 
+        }
+
+        /* 애니메이션 설정 */
+        @keyframes moveGradient {
+            0% {background-position: 0% 0;}
+            100% {background-position: 100% 0;}
+        }
+
+        footer {
+            position: fixed;
+            top: 90%;
+            left: 25%;
+            padding: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #ddd;
+        }
+    </style>
 </head>
 <body>
-    <a href="./index.html">
-        <header>
-            <link rel="stylesheet" type="text/css" href="style.css"/>
-        </header>
-    </a>
-    <div class="container">
-        <a href="../src/portfoilo.html" target="_top">
-            <div class="box">PROJECT</div>
-        </a>
-        <a href="../scr/game_main.html" target="_top">
-            <div class="box">GAME</div>
-        </a>
-        <a href="../src/about.html" target="_top">
-            <div class="box">About</div>
-        </a>
+    <dav>
+        <a href="./index.html" style="color: #fff; text-decoration: none; position: fixed; top: 2%; left: 40px; font-size: 40px;">Hello: Ivy</a>
+        <nav>
+            <a href="./about/index.html" style="padding: 10px;">About</a>
+            <a href="./portfoilo/index.html" style="padding: 10px;">Portfolio</a>
+            <a href="./study/index.html" style="padding: 10px;">Study</a>
+            <a href="./games/index.html" style="padding: 10px;">Game</a>
+        </nav>
+    </dav>
+
+    <div class="content">
+        <h1><span>Hello:</span> Ivy</h1>
     </div>
-    <script>function goToPage(page){window.location.href = page;}</script>
+
+    <div class="animated-line"></div>
+
+    <!-- Footer -->
+    <footer>
+        instagram: <a href="https://www.instagram.com/winsome_0113" target="_blank">winsome_0113</a> | 
+        email: <a href="mailto:unternehmen02191@gmail.com">unternehmen02191@gmail.com</a> | 
+        github: <a href="https://github.com/Rohyoohyun">Rohyoohyun</a>
+    </footer>
 </body>
 </html>
