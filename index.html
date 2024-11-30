@@ -14,21 +14,66 @@
             justify-content: space-between;
         }
 
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 좌우로 타이틀과 네비게이션 분리 */
+            width: 100vw; /* 전체 너비 사용 */
+            padding: 1% 5%; /* 위아래, 좌우 여백 추가 */
+            box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+            border-bottom: 1px solid #555; /* 하단 선 추가 */
+        }
+
+        .fixed-title {
+            color: #fff;
+            text-shadow: 0 0 10px #dcdcdc, 0 0 20px #dcdcdc;
+            text-decoration: none;
+            font-size: 40px;
+        }
+
         nav {
             display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            padding: 20px 40px;
-            font-size: 18px;
-            border-bottom: 1px solid #555;
+            gap: 20px; /* 네비게이션 항목 간 간격 추가 */
         }
+
         nav a {
             color: #ccc;
             text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
+
         nav a:hover {
             color: #FFF06B;
             text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 800px) {
+            .header {
+                flex-direction: column; /* 작은 화면에서는 위아래로 배치 */
+                align-items: flex-start; /* 정렬 방식 변경 */
+                padding: 10px 20px;
+            }
+
+            .fixed-title {
+                font-size: 30px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .fixed-title {
+                font-size: 24px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
         }
 
         .content {
@@ -58,7 +103,7 @@
         /* 움직이는 그라데이션 라인 */
         .animated-line {
             width: 70%; 
-            height: 2px; 
+            height: 15px; 
             background: linear-gradient(90deg, #2E2E2E, #555, #ccc); /* 그라데이션 색상 */
             position: fixed;
             top: 80%;
@@ -90,20 +135,19 @@
     </style>
 </head>
 <body>
-    <dav>
-        <a href="./index.html" style="color: #fff; text-decoration: none; position: fixed; top: 2%; left: 40px; font-size: 40px;">Hello: Ivy</a>
+    <header class="header">
+        <a href="./index.html" class="fixed-title">Hello: Ivy</a>
         <nav>
-            <a href="./about/index.html" style="padding: 10px;">About</a>
-            <a href="./portfoilo/index.html" style="padding: 10px;">Portfolio</a>
-            <a href="./study/index.html" style="padding: 10px;">Study</a>
-            <a href="./games/index.html" style="padding: 10px;">Game</a>
+            <a href="./about/index.html">About</a>
+            <a href="./portfoilo/index.html">Portfolio</a>
+            <a href="./study/index.html">Study</a>
+            <a href="./games/index.html">Game</a>
         </nav>
-    </dav>
+    </header>
 
     <div class="content">
-        <h1><span>Hello:</span> Ivy</h1>
+        <h1><span id="typing-text"></span></h1>
     </div>
-
     <div class="animated-line"></div>
 
     <!-- Footer -->
@@ -112,5 +156,39 @@
         email: <a href="mailto:unternehmen02191@gmail.com">unternehmen02191@gmail.com</a> | 
         github: <a href="https://github.com/Rohyoohyun">Rohyoohyun</a>
     </footer>
+
+    <script>
+        const text = "Hello: Ivy "; // 타이핑할 텍스트
+        const typingText = document.getElementById('typing-text');
+        let index = 0;
+        let isDeleting = false; // 글자를 지우는 상태를 나타냄
+
+        function typeText() {
+            if (!isDeleting && index <= text.length) {
+                // 글자를 한 글자씩 추가
+                typingText.textContent = text.slice(0, index);
+                index++;
+            } else if (isDeleting && index > 0) {
+                // 글자를 한 글자씩 삭제
+                typingText.textContent = text.slice(0, index);
+                index--;
+            }
+
+            // 타이핑 상태 전환
+            if (index === text.length) {
+                isDeleting = true; // 텍스트가 끝까지 출력되면 삭제로 전환
+                setTimeout(typeText, 1000); // 삭제 전 대기 시간
+                return;
+            } else if (index === 0) {
+                isDeleting = false; // 텍스트 삭제 후 추가로 전환
+            }
+
+            // 속도 조절
+            const typingSpeed = isDeleting ? 200 : 500;
+            setTimeout(typeText, typingSpeed);
+        }
+
+        typeText(); // 타이핑 효과 시작
+    </script>
 </body>
 </html>

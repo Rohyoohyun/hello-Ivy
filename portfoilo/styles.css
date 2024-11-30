@@ -1,0 +1,288 @@
+body {
+    background-color: #2E2E2E;
+    font-family: Pretendard Variable;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background-color: #2E2E2E;
+    font-family: Pretendard Variable;
+    margin: 0; /* 기본 여백 제거 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 좌우로 타이틀과 네비게이션 분리 */
+    width: 100vw; /* 전체 너비 사용 */
+    padding: 1% 5%; /* 위아래, 좌우 여백 추가 */
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+    border-bottom: 1px solid #555; /* 하단 선 추가 */
+}
+
+.fixed-title {
+    color: #fff;
+    text-shadow: 0 0 10px #dcdcdc, 0 0 20px #dcdcdc;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 20px; /* 네비게이션 항목 간 간격 추가 */
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFF06B;
+    text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 800px) {
+    .header {
+        flex-direction: column; /* 작은 화면에서는 위아래로 배치 */
+        align-items: flex-start; /* 정렬 방식 변경 */
+        padding: 10px 20px;
+    }
+
+    .fixed-title {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .fixed-title {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: thin;
+    text-align: center;
+    color: #FFF06B;
+    text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
+    margin-bottom: 0px; /* 텍스트와 이미지 간 간격 조정 */
+    margin-top: 10px; /* 위쪽 마진을 5px로 설정 */
+}
+
+/* slider */
+.slider__wrap {
+    width: 100%; /* 전체 화면 */
+    max-width: 600px; /* 이미지 크기 증가로 슬라이더 너비 확대 */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1% auto;
+    overflow: hidden; /* 슬라이더 외부 콘텐츠 숨기기 */
+}
+
+.slider__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.slider__inner {
+    display: flex;
+    width: 100%; /* 슬라이더 하나의 너비 */
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* 애니메이션 효과 */
+}
+
+.slider {
+    flex: 0 0 100%; /* 슬라이더 하나가 전체 너비 차지 */
+    height: auto;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* 원본 비율 유지 */
+}
+
+@media (max-width: 800px) {
+    .slider__wrap {
+        width: 95%; /* 작은 화면에서도 여백 유지 */
+        max-width: 300px;
+        margin: 5% auto;
+    }
+    .slider {
+        flex: 0 0 100%;
+        height: auto;
+    }
+    .slider img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 버튼 크기 */
+    width: 5%;
+    height: 5%;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 25px; /* 기본 글자 크기 */
+    padding: 2%;
+    transition: all 0.2s;
+    display: block;
+    color: #ffffffca;
+    cursor: pointer;
+    border-radius: 10%;
+    text-decoration-line: none;
+}
+
+.slider__btn a:hover {
+    border-radius: 20%;
+    color: #2E2E2E;
+    background: #ffe677;
+}
+
+.slider__btn a.prev {
+    left: 10px;
+}
+
+.slider__btn a.next {
+    right: 10px;
+}
+
+/* 반응형 글자 크기 조정 */
+@media (max-width: 1024px) {
+    .slider__btn a {
+        font-size: 20px; /* 중간 화면에서 글자 크기 조정 */
+        width: 6%; /* 버튼 크기 약간 늘리기 */
+        height: 6%;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider__btn a {
+        font-size: 18px; /* 더 작은 화면에서 글자 크기 줄이기 */
+        width: 7%; /* 버튼 크기 늘리기 */
+        height: 7%;
+    }
+}
+
+@media (max-width: 500px) {
+    .slider__btn a {
+        font-size: 15px; /* 작은 화면에서 글자 크기 더 줄이기 */
+        width: 8%; /* 버튼 크기 더욱 늘리기 */
+        height: 8%;
+    }
+}
+
+.slider__dot {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    display: flex;
+    justify-content: center; /* dot들을 중앙에 배치 */
+}
+
+.slider__dot .dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 3px;
+}
+
+.slider__dot .dot.active {
+    background: #ffe677;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 800px) {
+    .slider__dot {
+        bottom: 15px; /* 작은 화면에서는 dot을 더 가까이 배치 */
+    }
+
+    .slider__dot .dot {
+        width: 8px; /* dot 크기 줄임 */
+        height: 8px; /* dot 크기 줄임 */
+        margin: 2px; /* 간격 줄임 */
+    }
+}
+
+@media (max-width: 500px) {
+    .slider__dot {
+        bottom: 10px; /* 화면 크기가 더 작을 경우 dot을 더 가까이 배치 */
+    }
+
+    .slider__dot .dot {
+        width: 6px; /* 더 작은 화면에서 dot 크기 더 줄임 */
+        height: 6px; /* 더 작은 화면에서 dot 크기 더 줄임 */
+        margin: 1px; /* 간격 더 줄임 */
+    }
+}
+
+footer {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%); /* 화면 중앙에 정렬 */
+    padding: 20px;
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap; /* 글자가 한 줄로 유지되도록 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    overflow: hidden; /* 텍스트가 넘칠 경우 숨김 처리 */
+    text-overflow: ellipsis; /* 넘치는 텍스트가 있을 경우 ...으로 표시 */
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 800px) {
+    footer {
+        font-size: 12px; /* 작은 화면에서 글자 크기 줄이기 */
+        padding: 15px; /* 패딩 조정 */
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+        font-size: 10px; /* 더 작은 화면에서는 글자 크기를 더욱 줄임 */
+        padding: 10px; /* 패딩 조정 */
+    }
+}
