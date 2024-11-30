@@ -69,45 +69,46 @@ nav a:hover {
     }
 }
 
-.content {
+h1 {
+    font-size: 55px;
+    font-weight: thin;
     text-align: center;
-    flex-grow: 1;
+    color: #FFF06B;
+    text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
+    margin-bottom: 0px; /* 텍스트와 이미지 간 간격 조정 */
+    margin-top: 10px; /* 위쪽 마진을 5px로 설정 */
+}
+
+.study {
+    margin: 5%;
+    font-size: 20px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* 박스가 넘치면 줄 바꿈 */
+    justify-content: center; /* 중앙 정렬 */
+    gap: 1%;
+}
+
+.clickable-box {
+    width: 200px;
+    height: 70px;
+    border: 2px solid #ccc; /* 라인만 표시 */
+    border-radius: 30px;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-.content h1 {
-    font-size: 150px;
-    color: #FFF06B;
-    text-shadow: 0 0 10px #ffde4d, 0 0 20px #ffde4d;
-    margin: 0;
-    font-weight: thin;
-    position: fixed;
-    top: 10%;
-    left: 5%;
+    text-decoration: none; /* 텍스트 밑줄 제거 */
+    color: #ccc;
+    transition: all 0.3s ease;
+    margin-bottom: 3%;
+    margin-right: 3%;
 }
 
-.content h1 span {
-    font-size: 200px;
-    font-weight: bold;
-}
-
-/* 움직이는 그라데이션 라인 */
-.animated-line {
-    width: 70%; 
-    height: 15px; 
-    background: linear-gradient(90deg, #2E2E2E, #555, #ccc); /* 그라데이션 색상 */
-    position: fixed;
-    top: 80%;
-    left: 30%;
-    animation: moveGradient 2s linear infinite; 
-}
-
-/* 애니메이션 설정 */
-@keyframes moveGradient {
-    0% {background-position: 0% 0;}
-    100% {background-position: 100% 0;}
+.clickable-box:hover {
+    cursor: pointer;
+    background-color: #FFF06B;
+    box-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
+    color: #2E2E2E;
+    border-color: none;
 }
 
 footer {
