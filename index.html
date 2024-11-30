@@ -120,18 +120,41 @@
         footer {
             position: fixed;
             top: 90%;
-            left: 25%;
+            left: 50%;
+            transform: translateX(-50%); /* 화면 중앙에 정렬 */
             padding: 20px;
             font-size: 14px;
             color: #888;
+            white-space: nowrap; /* 글자가 한 줄로 유지되도록 설정 */
+            text-align: center; /* 텍스트 가운데 정렬 */
+            overflow: hidden; /* 텍스트가 넘칠 경우 숨김 처리 */
+            text-overflow: ellipsis; /* 넘치는 텍스트가 있을 경우 ...으로 표시 */
         }
+
         footer a {
             color: #888;
             text-decoration: none;
         }
+
         footer a:hover {
             color: #ddd;
         }
+
+        /* 반응형 스타일 */
+        @media (max-width: 800px) {
+            footer {
+                font-size: 12px; /* 작은 화면에서 글자 크기 줄이기 */
+                padding: 15px; /* 패딩 조정 */
+            }
+        }
+
+        @media (max-width: 500px) {
+            footer {
+                font-size: 10px; /* 더 작은 화면에서는 글자 크기를 더욱 줄임 */
+                padding: 10px; /* 패딩 조정 */
+            }
+        }
+
     </style>
 </head>
 <body>
