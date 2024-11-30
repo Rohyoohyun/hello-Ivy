@@ -1,0 +1,149 @@
+body {
+    background-color: #2E2E2E;
+    font-family: Pretendard Variable;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 좌우로 타이틀과 네비게이션 분리 */
+    width: 100vw; /* 전체 너비 사용 */
+    padding: 1% 5%; /* 위아래, 좌우 여백 추가 */
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+    border-bottom: 1px solid #555; /* 하단 선 추가 */
+}
+
+.fixed-title {
+    color: #fff;
+    text-shadow: 0 0 10px #dcdcdc, 0 0 20px #dcdcdc;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 20px; /* 네비게이션 항목 간 간격 추가 */
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFF06B;
+    text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 800px) {
+    .header {
+        flex-direction: column; /* 작은 화면에서는 위아래로 배치 */
+        align-items: flex-start; /* 정렬 방식 변경 */
+        padding: 10px 20px;
+    }
+
+    .fixed-title {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .fixed-title {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
+
+.content {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content h1 {
+    font-size: 150px;
+    color: #FFF06B;
+    text-shadow: 0 0 10px #ffde4d, 0 0 20px #ffde4d;
+    margin: 0;
+    font-weight: thin;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+}
+
+.content h1 span {
+    font-size: 200px;
+    font-weight: bold;
+}
+
+/* 움직이는 그라데이션 라인 */
+.animated-line {
+    width: 70%; 
+    height: 15px; 
+    background: linear-gradient(90deg, #2E2E2E, #555, #ccc); /* 그라데이션 색상 */
+    position: fixed;
+    top: 80%;
+    left: 30%;
+    animation: moveGradient 2s linear infinite; 
+}
+
+/* 애니메이션 설정 */
+@keyframes moveGradient {
+    0% {background-position: 0% 0;}
+    100% {background-position: 100% 0;}
+}
+
+footer {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%); /* 화면 중앙에 정렬 */
+    padding: 20px;
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap; /* 글자가 한 줄로 유지되도록 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    overflow: hidden; /* 텍스트가 넘칠 경우 숨김 처리 */
+    text-overflow: ellipsis; /* 넘치는 텍스트가 있을 경우 ...으로 표시 */
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 800px) {
+    footer {
+        font-size: 12px; /* 작은 화면에서 글자 크기 줄이기 */
+        padding: 15px; /* 패딩 조정 */
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+        font-size: 10px; /* 더 작은 화면에서는 글자 크기를 더욱 줄임 */
+        padding: 10px; /* 패딩 조정 */
+    }
+}

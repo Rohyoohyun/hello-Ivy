@@ -224,7 +224,6 @@ h1 {
     background: #ffe677;
 }
 
-/* 반응형 스타일 */
 @media (max-width: 800px) {
     .slider__dot {
         bottom: 15px; /* 작은 화면에서는 dot을 더 가까이 배치 */
