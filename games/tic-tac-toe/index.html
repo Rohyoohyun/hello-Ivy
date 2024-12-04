@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Ivy: game - tic-tac-toe</title>
+    <link rel="stylesheet" href="../tic-tac-toe/styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="fixed-title">Hello: Ivy</a>
+        <nav>
+            <a href="../about/index.html">About</a>
+            <a href="../portfoilo/index.html">Portfolio</a>
+            <a href="../study/index.html">Study</a>
+            <a href="../games/index.html">Game</a>
+        </nav>
+    </header>
+    <h1>Tic-tac-toe</h1>
+    
+    <a href="../tic-tac-toe/play/play.html" id="startButton">게임 시작</a>
+    <button id="instructionsButton" onclick="showInstructions()">게임 설명</button>
+
+    <div id="instructions">
+        <h2>게임 설명</h2>
+        <p>틱택토는 3x3 격자에서 두 플레이어가 번갈아가며 "X"와 "O"를 넣어 3개의 같은 표시를 가로, 세로, 또는 대각선으로 일치시키는 게임입니다.</p>
+        <p>검정색은 "X"를 나타내며, 노란색은 "O"를 나타냅니다.</p>
+        <button id="backButton" onclick="goBack()">뒤로 가기</button>
+    </div>
+    <p style="color: #ccc">Hello: Ivy를 누르시면 이전 화면으로 돌아갑니다.</p>
+    <script>
+        // 게임 설명 보이기
+        function showInstructions() {
+            document.getElementById('instructions').style.display = 'block';
+            document.getElementById('game').style.display = 'none';
+        }
+
+        // 뒤로 가기 버튼
+        function goBack() {
+            document.getElementById('instructions').style.display = 'none';
+            document.getElementById('game').style.display = 'none';
+            document.getElementById('startButton').style.display = 'inline-block';
+            document.getElementById('instructionsButton').style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>

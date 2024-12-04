@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-tac-toe Game</title>
+    <link rel="stylesheet" href="../play/play.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="fixed-title">Hello: Ivy</a>
+        <nav>
+            <a href="../about/index.html">About</a>
+            <a href="../portfoilo/index.html">Portfolio</a>
+            <a href="../study/index.html">Study</a>
+            <a href="../games/index.html">Game</a>
+        </nav>
+    </header>
+
+    <h1>Tic-tac-toe</h1>
+    <div class="board">
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+    </div>
+    <p id="turn"></p>
+    <p style="color: #ccc">Hello: Ivy를 누르시면 이전 화면으로 돌아갑니다.</p>
+    <script src="../play/play.js"></script>
+</body>
+</html>
+
