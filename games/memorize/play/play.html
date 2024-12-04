@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 기억 게임</title>
+    <link rel="stylesheet" href="../play/play.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="fixed-title">Hello: Ivy</a>
+        <nav>
+            <a href="../about/index.html">About</a>
+            <a href="../portfoilo/index.html">Portfolio</a>
+            <a href="../study/index.html">Study</a>
+            <a href="../games/index.html">Game</a>
+        </nav>
+    </header>
+    <h1>Number Memorize</h1>
+    <p id="level">최대 숫자: 5</p>
+    <div class="grid" id="grid"></div>
+    <div id="retry-buttons">
+        <button class="button" id="retry-start">처음 단계로 시작</button>
+        <button class="button" id="retry-current">현재 단계로 시작</button>
+    </div>
+    <p style="color: #ccc">Hello: Ivy를 누르시면 이전 화면으로 돌아갑니다.</p>
+    <script>
+        const grid = document.getElementById('grid');
+        const levelText = document.getElementById('level');
+        const retryButtons = document.getElementById('retry-buttons');
+        const retryStartButton = document.getElementById('retry-start');
+        const retryCurrentButton = document.getElementById('retry-current');
+        let currentNumbers = 5;
+        const maxNumbers = 40;
+        let shuffledNumbers, currentClickIndex;
+        function updateGridSize() {
+            const gridSize = Math.ceil(Math.sqrt(currentNumbers));
+            grid.style.gridTemplateColumns = `repeat(${gridSize}, 60px)`;
+        }
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function initGame() {
+            grid.innerHTML = '';
+            levelText.textContent = `최대 숫자: ${currentNumbers}`;
+            updateGridSize();
+
+            shuffledNumbers = shuffle(Array.from({ length: currentNumbers }, (_, i) => i + 1));
+            currentClickIndex = 1;
+
+            shuffledNumbers.forEach(number => {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.textContent = number;
+                cell.dataset.number = number;
+                grid.appendChild(cell);
+            });
+
+            setTimeout(() => {
+                document.querySelectorAll('.cell').forEach(cell => {
+                    cell.textContent = '?';
+                    cell.classList.add('hidden');
+                });
+            }, 3000);
+        }
+
+        grid.addEventListener('click', event => {
+            const cell = event.target;
+            if (!cell.classList.contains('cell') || cell.classList.contains('hidden') === false) return;
+
+            const clickedNumber = parseInt(cell.dataset.number, 10);
+            if (clickedNumber === currentClickIndex) {
+                cell.textContent = clickedNumber;
+                cell.classList.remove('hidden');
+                currentClickIndex++;
+
+                if (currentClickIndex > currentNumbers) {
+                    if (currentNumbers < maxNumbers) {
+                        setTimeout(() => {
+                            alert('성공! 다음 단계로 갑니다!');
+                            currentNumbers += 2;
+                            initGame();
+                        }, 100);
+                    } else {
+                        setTimeout(() => alert('축하합니다! 최종 단계에 도달했습니다!'), 100);
+                    }
+                }
+            } else {
+                showRetryOptions();
+            }
+        });
+
+        function showRetryOptions() {
+            retryButtons.style.display = 'block';
+        }
+
+        retryStartButton.addEventListener('click', () => {
+            currentNumbers = 5;
+            retryButtons.style.display = 'none';
+            initGame();
+        });
+
+        retryCurrentButton.addEventListener('click', () => {
+            retryButtons.style.display = 'none';
+            initGame();
+        });
+        initGame();
+    </script>
+</body>
+</html>
