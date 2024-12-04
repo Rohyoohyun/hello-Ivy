@@ -23,6 +23,19 @@ class Tetris {
                 this.fall();
             }
         }
+
+        document.getElementById("tetris-move-left-button").onmousedown = (e) => {
+            this.moveLeft();
+        }
+        document.getElementById("tetris-rotate-button").onmousedown = (e) => {
+            this.rotate();
+        }
+        document.getElementById("tetris-move-right-button").onmousedown = (e) => {
+            this.moveRight();
+        }
+        document.getElementById("tetris-fall-button").onmousedown = (e) => {
+            this.fall();
+        }
     }
 
     createBlocks() {
