@@ -1,0 +1,87 @@
+body {
+    background-color: #2E2E2E;
+    font-family: Pretendard Variable, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수평 중앙 정렬 */
+    height: 100vh; /* 화면 전체 높이 사용 */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 1% 5%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #555;
+}
+
+.fixed-title {
+    color: #fff;
+    text-shadow: 0 0 10px #dcdcdc, 0 0 20px #dcdcdc; /* 제목에 그림자 효과 추가 */
+    text-decoration: none;
+    font-size: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+  
+nav a {
+    color: #ccc; /* 기본 텍스트 색상 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-size: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* 색상과 텍스트 그림자에 부드러운 전환 효과 */
+}
+  
+nav a:hover {
+    color: #FFF06B; /* 호버 시 텍스트 색상 변경 */
+    text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677; /* 호버 시 텍스트 그림자 효과 추가 */
+}
+
+/* 중앙 정렬 */
+.wrapper-container {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.tetris-container {
+    margin: 3%;
+    padding-left: 2%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 80vh;
+}
+
+
+.tetris-panel-container {
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction: column;
+    color: white;
+}
+
+.tetris-panel-container-padding {
+    flex-grow: 1; /* 패널이 남는 공간을 채우도록 설정 */
+}
+
+.tetris-panel-container p {
+    margin: 0;
+    padding: 0;
+}
+
+/* .container를 grid 레이아웃으로 변경 */
+.container {
+    display: grid; /* 그리드 레이아웃 사용 */
+    gap: 20px; /* 그리드 항목 간의 간격 */
+    justify-items: center; /* 그리드 셀 내에서 항목을 수평 중앙 정렬 */
+    align-items: center; /* 그리드 셀 내에서 항목을 수직 중앙 정렬 */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 열의 최소 크기를 100px로 설정하고, 가능한 만큼 열을 채움 */
+}

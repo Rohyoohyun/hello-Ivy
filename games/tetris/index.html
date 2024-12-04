@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GAME: Tetris</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../tetris/styles.css">
+    <script type="text/javascript" src="../tetris/index.js"></script>
+  </head>
+  <body>
+    <header class="header">
+        <a href="../index.html" class="fixed-title">Hello: Ivy</a>
+        <nav>
+            <a href="../about/index.html">About</a>
+            <a href="../portfoilo/index.html">Portfolio</a>
+            <a href="../study/index.html">Study</a>
+            <a href="../games/index.html">Game</a>
+        </nav>
+    </header>
+        <div class="wrapper-container">
+            <span class="tetris-container">
+                <canvas id="stage" width="250px" height="500px" style="background-color:black;">
+                </canvas>
+                <span class="tetris-panel-container">
+                  <p>Next:</p>
+                    <canvas id="next" width="200px" height="200px" style="align-items: center; background-color:black;"></canvas>
+                  <p><span id="message"></span></p>
+                  <div class="tetris-panel-container-padding"></div>
+                </span>
+            </span>
+        </div>
+    </div>
+    <script>
+      var tetris = new Tetris();
+      tetris.startGame();
+    </script>
+  </body>
+</html>
