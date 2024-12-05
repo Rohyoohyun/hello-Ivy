@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello Ivy: game - Tetris</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../play/play.css">
+    <script type="text/javascript" src="../play/play.js"></script>
+  </head>
+  <body>
+    <header class="header">
+        <a href="../index.html" class="fixed-title">Hello: Ivy</a>
+        <nav>
+            <a href="../about/index.html">About</a>
+            <a href="../portfoilo/index.html">Portfolio</a>
+            <a href="../study/index.html">Study</a>
+            <a href="../games/index.html">Game</a>
+        </nav>
+    </header>
+    <div>    
+        <div class="wrapper-container">
+            <span class="tetris-container">
+                <canvas id="stage" width="250px" height="500px" style="background-color:black;">
+                </canvas>
+                <span class="tetris-panel-container">
+                  <p>Next:</p>
+                    <canvas id="next" width="150px" height="150px" style="background-color:black;">
+                    </canvas>
+                  <p>LINES:<span id="lines">0</span></p>
+                  <p><span id="message"></span></p>
+                  <div class="tetris-panel-container-padding"></div>
+                  <table class="tetris-button-panel">
+                    <tr>
+                      <td></td>
+                      <td id="tetris-rotate-button" class="tetris-button">↻</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td id="tetris-move-left-button"class="tetris-button">←</td>
+                      <td id="tetris-fall-button"class="tetris-button">↓</td>
+                      <td id="tetris-move-right-button"class="tetris-button">→</td>
+                    </tr>
+                  </table>
+                </span>
+            </span>
+        </div>
+    </div>
+    <p style="color: #ccc">Hello: Ivy를 누르시면 이전 화면으로 돌아갑니다. 다시 시작하시길 원한다면 '새로고침' 해주세요.</p>
+    <script>
+      var tetris = new Tetris();
+      tetris.startGame();
+    </script>
+  </body>
+</html>
