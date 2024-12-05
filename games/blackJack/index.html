@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Ivy: game - BlackJack</title>
+    <link rel="stylesheet" href="../memorize/styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="fixed-title">Hello: Ivy</a>
+        <nav>
+            <a href="../about/index.html">About</a>
+            <a href="../portfoilo/index.html">Portfolio</a>
+            <a href="../study/index.html">Study</a>
+            <a href="../games/index.html">Game</a>
+        </nav>
+    </header>
+    <h1>BlackJack</h1>
+    <h2 style="color: #ccc;">아직 활성화되지않은 게임입니다. 다음을 기약해주세요</h2>
+    <a href="#" id="startButton" onclick="showError()">게임 시작</a>
+    <button id="instructionsButton" onclick="showInstructions()">게임 설명</button>
+    <div id="instructions">
+        <h2>게임 설명</h2>
+        <p>블랙잭은 딜러와 플레이어가 카드 점수의 합이 21에 가깝게 만드는 게임입니다.</p>
+        <p>A는 1 또는 11로, J/Q/K는 10으로 계산하며, 나머지 숫자 카드는 표기된 값을 가집니다.</p>
+        <p>처음 두 장의 합이 21이면 블랙잭으로 즉시 승리합니다(단, 딜러도 블랙잭이면 무승부).</p>
+        <p>21을 초과하면 패배하며, 21에 가깝도록 추가로 카드를 받을 수 있습니다(히트).</p>
+        <p>딜러는 17 이상이 될 때까지 카드를 받으며, 점수가 더 높은 쪽이 승리합니다.</p>
+        <button id="backButton" onclick="goBack()">뒤로 가기</button>
+    </div>
+
+    <p style="color: #ccc">Hello: Ivy를 누르시면 이전 화면으로 돌아갑니다.</p>
+    <script>
+        // 게임 설명 보이기
+        function showInstructions() {
+            document.getElementById('instructions').style.display = 'block';
+            document.getElementById('game').style.display = 'none';
+        }
+
+        // 뒤로 가기 버튼
+        function goBack() {
+            document.getElementById('instructions').style.display = 'none';
+            document.getElementById('game').style.display = 'none';
+            document.getElementById('startButton').style.display = 'inline-block';
+            document.getElementById('instructionsButton').style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>
