@@ -45,10 +45,10 @@ h1 {
   font-size: 55px;
   font-weight: thin;
   text-align: center;
-  color: #fff598;
+  color: #FFF06B;
   text-shadow: 0 0 10px #ffe677, 0 0 20px #ffe677;
-  margin-bottom: 20px;
-  margin-top: 10%;
+  margin-bottom: 0px; /* 텍스트와 이미지 간 간격 조정 */
+  margin-top: 10px; /* 위쪽 마진을 5px로 설정 */
 }
 
 .game-container {
