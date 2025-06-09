@@ -1,0 +1,133 @@
+.container {
+    padding: 0 4rem;
+}
+
+.MainText {
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'LOTTERIACHAB';
+    margin: 4rem;
+    padding: 0;
+
+    background-image: url('/FontColorImg.png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    -webkit-text-stroke: .1rem #6CA7E0;
+}
+
+.explan {
+    padding-left: 5rem;
+    font-size: .8rem;
+    color: #666;
+}
+
+.GithubLink {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.ProjectImg {
+    position: fixed;
+    right: 20px;
+}
+
+.CardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 10rem;
+}
+
+.Card {
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    padding: 2rem 1rem;
+}
+
+.Card:hover {
+    background-color: #ebf6ff;
+    border-color: #BACFE3;
+    box-shadow: 0 0 10px 2px #BACFE3;
+}
+
+.Title {
+    font-size: 2rem;
+    font-family: 'LOTTERIACHAB';
+    font-weight: 100;
+    margin: 0;
+}
+
+.Description {
+    color: #666;
+    margin: 8px 0;
+}
+
+.Date {
+    margin: 0;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.CategoryTabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.Tab {
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.SelectedTab {
+    padding: 8px 14px;
+    color: #6CA7E0;
+    border: none;
+    border-bottom: 3px solid #6CA7E0;
+    background: none;
+}
+
+.TabList {
+    display: flex;
+    gap: 10px;
+}
+
+.Search {
+    position: relative;
+    width: 20rem;
+    background-color: #f3f3f3;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.SearchInput {
+    background: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-right: 1.5rem;
+    /* 아이콘 공간 확보 */
+}
+
+@media (max-width: 748px) {
+    .ProjectImg {
+        display: none;
+    }
+}

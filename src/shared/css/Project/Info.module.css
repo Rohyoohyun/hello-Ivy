@@ -1,0 +1,34 @@
+.mainContent {
+    display: flex;
+    flex-direction: column; /* 수직 정렬 */
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 4rem;
+}
+
+.backBtn,
+.EditBtn {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.EditBtn {
+    background: #fff;
+    color: #333;
+    border: 0.1rem solid #333;
+}
+
+.backBtn:hover,
+.EditBtn:hover {
+    background-color: #FFF1A0;
+    color: #333;
+    border: none;
+}

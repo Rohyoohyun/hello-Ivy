@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* 카드 상단 맞춤 */
+  gap: 2rem;                /* 카드 사이 간격 */
+  flex-wrap: wrap;          /* 화면 좁으면 줄바꿈 */
+  margin: 4rem;
+  box-sizing: border-box;
+  flex-direction: row;      /* 카드 가로배치 */
+}
+
+.title {
+    margin: 4rem 0 0 4rem;
+    font-family: 'LOTTERIACHAB';
+    font-size: 3rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+
+.SkillCard {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  flex: 1 1 22%;
+  max-width: 280px;
+  min-width: 220px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.Category {
+  font-family: 'LOTTERIACHAB';
+  font-size: 2rem;
+  font-weight: 100;
+  color: #BACFE3;
+  -webkit-text-stroke: 0.05rem #666;
+  margin: 0 0 1rem 0;
+  text-align: center;       /* 카테고리 중앙정렬 */
+}
+
+.SkillItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 0.5rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.SkillImg {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .SkillCard {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  .SkillCard {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+}

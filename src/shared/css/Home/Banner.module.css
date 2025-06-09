@@ -1,0 +1,74 @@
+.contentWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;    /* 수직 중앙 정렬 */
+  justify-content: flex-start;
+  gap: 5rem;              /* 이미지와 텍스트 사이 간격 */
+  padding: 0 2rem;        /* 좌우 여백 */
+  flex-wrap: wrap;        /* 화면 작아지면 아래로 내려가도록 */
+}
+
+.HomeImage {
+  width: 35rem;
+  max-width: 90vw;
+  height: auto;
+  animation: sway 4s ease-in-out infinite;
+  transform-origin: center center; /* 중심축 회전 */
+}
+
+@keyframes sway {
+  0%   { transform: rotate(3deg); }
+  50%  { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+.textBlock {
+  max-width: 500px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .textBlock {
+    text-align: center;
+  }
+  .HomeImage {
+    width: 300px;
+  }
+}
+
+.SubText {
+    margin: 0;
+    padding: 0;
+    font-family: 'omyu pretty';
+    color: #666;
+    font-size: 1.5rem;
+}
+
+.MainText {
+  font-size: 6rem;
+  font-family: 'LOTTERIACHAB';
+  margin: 0;
+  padding: 0;
+
+  background-image: url('/FontColorImg.png');
+  background-size: cover;
+  background-position: center;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  -webkit-text-stroke: .15rem #6CA7E0;
+}
+
+.TextStyle {
+    margin: 5px;
+    padding: 0;
+}

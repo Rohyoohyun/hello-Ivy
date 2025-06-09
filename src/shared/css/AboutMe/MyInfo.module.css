@@ -1,0 +1,163 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin: 4rem;
+}
+
+.MainText {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'LOTTERIACHAB';
+  margin: 0;
+  padding: 0;
+
+  background-image: url('/FontColorImg.png');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  -webkit-text-stroke: .1rem #6CA7E0;
+}
+
+.PointText{
+  font-family: 'LOTTERIACHAB';
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.speechBox {
+  position: absolute;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  max-width: 240px;
+  font-size: 0.95rem;
+  z-index: 10;
+}
+
+.imgWrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.AboutMeImg {
+  width: 15rem;
+  height: auto;
+  display: block;
+  z-index: 1;
+}
+
+.topRight {
+  top: 30%;
+  right: 0;
+  transform: translate(50%, -100%);
+  margin-right: -5rem;
+}
+
+.middleLeft {
+  top: 0%;
+  left: 0;
+  transform: translate(-100%, 50%);
+  margin-left: 1rem;
+}
+
+.hashtag {
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  z-index: 10;
+  font-family: 'LOTTERIACHAB';
+  -webkit-text-stroke: .01rem #333;
+}
+
+.tag1 {
+  bottom: 15%;
+  left: 20%;
+  color: #b2cfee;
+}
+
+.tag2 {
+  bottom: 10rem;
+  right: 12rem;
+  color: #f8e28e;
+}
+
+.tag3 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f8e28e;
+}
+
+.tag4 {
+  bottom: 30%;
+  left: 25%;
+  color: #f8e28e;
+}
+
+.tag5 {
+  bottom: 10%;
+  right: 20%;
+  color: #b2cfee;
+}
+
+@media (max-width: 768px) {
+  .MainText {
+    font-size: 2.5rem;
+  }
+
+  .AboutMeImg {
+    width: 150px;
+  }
+
+  .container {
+    padding: 0 1rem;
+    height: auto;
+    margin-top: 100px;
+  }
+
+  .speechBox {
+    max-width: 180px;
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+}
+
+/* 1440px 이하 */
+@media (max-width: 1440px) {
+  .hashtag {
+    font-size: 2rem;
+  }
+}
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+  .hashtag {
+    font-size: 1.5rem;
+  }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  .hashtag {
+    font-size: 1rem;
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px) {
+  .hashtag {
+    font-size: 0.85rem;
+  }
+}

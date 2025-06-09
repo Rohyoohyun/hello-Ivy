@@ -1,0 +1,71 @@
+.container {
+  padding: 0 4rem;
+}
+
+.MainText {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'LOTTERIACHAB';
+  margin: 4rem;
+  padding: 0;
+
+  background-image: url('/FontColorImg.png');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  -webkit-text-stroke: .1rem #6CA7E0;
+}
+
+.LearnImg {
+  width: 20rem;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  gap: 0 20rem;
+  flex-wrap: wrap;
+}
+
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemWrapper {
+  position: relative;
+  width: 20rem;
+  height: 12rem;
+}
+
+.LearnItem {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.LearnItemText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-family: 'LOTTERIACHAB';
+  font-weight: 100;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: center;
+  z-index: 1;
+}
+
+.LearnItemText:hover {
+  color: #6CA7E0;
+}
