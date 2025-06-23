@@ -6,14 +6,30 @@ interface ProjectCardProps {
     title: string;
     description: string;
     date: string;
+    onAddClick?: (id: string) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, date}) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+    id,
+    title,
+    description,
+    date,
+    onAddClick
+}) => {
     return (
         <div className={styles.Card}>
-            <p className={styles.Date}>{date}</p>
             <h3 className={styles.Title}>{title}</h3>
             <p className={styles.Description}>{description}</p>
+
+            <div className={styles.CardOverlay}>
+                <p className={styles.Date}>{date}</p>
+                <button
+                    className={styles.AddButton}
+                    onClick={() => onAddClick?.(id)}
+                >
+                    Add
+                </button>
+            </div>
         </div>
     );
 };

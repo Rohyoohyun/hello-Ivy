@@ -1,12 +1,14 @@
 .container {
     padding: 0 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .MainText {
     text-align: center;
     font-size: 4rem;
     font-family: 'LOTTERIACHAB';
-    margin: 4rem;
+    margin: 4rem 0;
     padding: 0;
 
     background-image: url('/FontColorImg.png');
@@ -20,40 +22,69 @@
     -webkit-text-stroke: .1rem #6CA7E0;
 }
 
-.explan {
-    padding-left: 5rem;
-    font-size: .8rem;
-    color: #666;
-}
-
-.GithubLink {
-    display: inline-flex;
+.CategoryTabs {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #333;
-    text-decoration: none;
 }
 
-.ProjectImg {
-    position: fixed;
-    right: 20px;
+.TabList {
+    display: flex;
+    gap: 10px;
+}
+
+.Tab,
+.SelectedTab {
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.SelectedTab {
+    color: #6CA7E0;
+    border-bottom: 3px solid #6CA7E0;
+}
+
+/* 검색 영역 */
+.Search {
+    position: relative;
+    width: 20rem;
+    background-color: #f3f3f3;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.SearchInput {
+    background: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-right: 1.5rem;
 }
 
 .CardContainer {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-bottom: 10rem;
+    margin-top: 2rem;
 }
 
 .Card {
-    width: 80%;
+    position: relative;
+    aspect-ratio: 3 / 2;
     border: 1px solid #ddd;
     border-radius: 12px;
     background: #fff;
+    padding: 0.8rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-    padding: 2rem 1rem;
 }
 
 .Card:hover {
@@ -72,61 +103,81 @@
 .Description {
     color: #666;
     margin: 8px 0;
+    font-size: 0.9rem;
+    flex-grow: 1;
 }
 
 .Date {
     margin: 0;
     font-size: 12px;
-    color: #ccc;
+    color: #666;
 }
 
-.CategoryTabs {
+.TagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0.4rem 0;
+}
+
+.Tag {
+  background-color: #e2e8f0;
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.CardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    box-sizing: border-box;
 }
 
-.Tab {
-    padding: 8px 14px;
+.Card:hover .CardOverlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.AddButton {
+    background-color: #6CA7E0;
+    color: white;
     border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
     cursor: pointer;
-    background: none;
+    font-size: 0.8rem;
+    transition: background-color 0.2s ease;
 }
 
-.SelectedTab {
-    padding: 8px 14px;
-    color: #6CA7E0;
-    border: none;
-    border-bottom: 3px solid #6CA7E0;
-    background: none;
+.AddButton:hover {
+    background-color: #508dc3;
 }
 
-.TabList {
-    display: flex;
-    gap: 10px;
+/* 반응형 */
+@media (max-width: 1024px) {
+    .CardContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.Search {
-    position: relative;
-    width: 20rem;
-    background-color: #f3f3f3;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-}
+@media (max-width: 600px) {
+    .CardContainer {
+        grid-template-columns: 1fr;
+    }
 
-.SearchInput {
-    background: none;
-    width: 100%;
-    border: none;
-    outline: none;
-    padding-right: 1.5rem;
-    /* 아이콘 공간 확보 */
-}
-
-@media (max-width: 748px) {
     .ProjectImg {
         display: none;
     }

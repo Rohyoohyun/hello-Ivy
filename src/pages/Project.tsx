@@ -52,7 +52,6 @@ export const Project: React.FC = () => {
         <>
             <Navbar />
             <p className={styles.MainText}>Project</p>
-            <p className={styles.explan}>카드를 클릭하시면 프로젝트 내용을 보실 수 있습니다.</p>
             <div className={styles.container}>
                 <CategoryTabs
                     selected={selectCategory}
@@ -74,7 +73,6 @@ export const Project: React.FC = () => {
                             />
                         </div>
                     ))}
-                    <img src="/MeImg/ProjectImg.svg" alt="ProjectImg" className={styles.ProjectImg} />
                 </div>
             </div>
 
