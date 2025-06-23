@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "start": "vite preview --port $PORT",
     "heroku-prebuild": "export NODE_ENV=development"
   },
   "dependencies": {
