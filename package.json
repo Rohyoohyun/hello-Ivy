@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "heroku-prebuild": "export NODE_ENV=development"
   },
   "dependencies": {
     "framer-motion": "^12.16.0",
