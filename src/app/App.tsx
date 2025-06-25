@@ -5,7 +5,7 @@ import Home from '@/pages/Home';
 import AboutMe from '@/pages/AboutMe';
 import Project from '@/pages/Project';
 import Learning from '@/pages/Learning';
-import ProjectAddModal from '@/features/ProjectComponets/ProjectAddModal';
+import ProjectPlus from '@/pages/ProjectPlus';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/about" element={<AboutMe />} />
           <Route path="/learning" element={<Learning />} />
           <Route path="/project" element={<Project />} />
-          {/* <Route path="/project/add" element={<ProjectAddModal onAdd={handleAddProject} />} /> */}
+          <Route path="/project/add" element={<ProjectPlus />} />
         </Routes>
       </Router>
     </RecoilRoot>

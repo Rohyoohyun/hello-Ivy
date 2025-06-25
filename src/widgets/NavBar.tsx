@@ -3,6 +3,7 @@ import { IoMoon, IoSunny } from "react-icons/io5";
 import { useState } from "react";
 
 export default function Navbar() {
+   {/*
   const [language, setLanguage] = useState<'KO' | 'EN'>('KO');
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -13,7 +14,7 @@ export default function Navbar() {
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
     document.body.classList.toggle('dark-mode', !isDarkMode); // 선택사항
-  };
+  }; */}
 
   return (
     <div className={styles.navbar}>
@@ -37,14 +38,17 @@ export default function Navbar() {
           </nav>
         </div>
 
-        {/* 오른쪽: 언어 / 테마 토글 */}
+        {/* 오른쪽: 언어 / 테마 토글(내용보류) */}
         <div className={styles.right}>
+          {/*
           <button onClick={toggleLanguage} className={styles.languageMode}>
             {language}
           </button>
+          
           <button onClick={toggleTheme} className={styles.themeToggle}>
             {isDarkMode ? <IoSunny className={styles.icon} /> : <IoMoon className={styles.icon} />}
           </button>
+          */}
         </div>
       </div>
     </div>
